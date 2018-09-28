@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片边框</title>
+</head>
+<body>
+	<h1>图片边框</h1>
+	<p>过去做背景边框，div嵌套，外层的背景用图片，内层略小居中，但这种方法需要精准度量。更方便的方法是使用 border-image</p>
+	<div class='back'><br> 运行状态监控 </div>
+	<div class='back'><br> border-image 运行状态监控 </div>
+<style>
+body{
+	background: #003366;
+	color: #fff;
+}
+.back{
+	height: 180px;width: 400px;
+	background: url(http://www.imaoda.com/s/img/tpl/content-frame1.png) no-repeat;
+	background-size: contain; 
+	background-position: center;
+	color: white;
+	text-align: center;
+}
+.back:nth-of-type(2) {
+	background: none;
+	border:20px solid transparent;
+	border-image: url(http://www.imaoda.com/s/img/tpl/content-frame1.png) 40 40 round;
+	/*图像边框是否应平铺(repeat)、铺满(round)或拉伸(stretch)。*/
+}
+</style>
+
+</body>
+</html>

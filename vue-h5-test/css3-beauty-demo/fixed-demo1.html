@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素背景（框）</title>
+</head>
+<body>
+	<h1>元素背景（框）</h1>
+	<ul>
+		<li>承载背景的外层，其长宽比和图近似</li>
+		<li>背景图片采用 background-position: center; background-size: contain; 实现自适应大小居中</li>
+		<li>内层用来承载内容，略小于外框，通过外框的flex实现居中</li>
+		<li>要让文字清晰于各种背景：白色文字带黑色发光，黑色文字带白色发光</li>
+	</ul>
+<ul class="demo">
+	<li> <div class='content'> 第一名 </div> </li>
+	<li> <div class='content'> 第二名 </div> </li>
+	<li> <div class='content'> 第三名 </div> </li>
+</ul>
+<style>
+body{
+	background: linear-gradient(0deg,#006666,#003333);
+	color: #fff;
+}
+ul.demo{
+	margin: 20px 10px;
+	display: flex
+}
+.demo > li{
+	list-style: none; margin: 10px; height: 150px; width: 200px;
+	background: url(http://www.imaoda.com/s/img/github/31.png) no-repeat;
+	background-position: center; background-size: 100%;
+	color: white; text-shadow: 0 0 2px #222222;
+	display: flex; justify-content: center; align-items: center;
+	text-align: center;
+}
+.content{
+	height: 80px; width: 120px;
+}
+</style>
+
+</body>
+</html>

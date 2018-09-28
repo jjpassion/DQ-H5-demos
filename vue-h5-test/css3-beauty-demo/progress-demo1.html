@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<body>
+	<h1>质感进度条</h1>
+	<p>进度条要中间亮，两边暗，显得圆鼓鼓的，进度条容器要有内阴影，显示出凹进去的感觉</p>
+<div class='box'>
+	<div class='progress'></div>
+</div>
+<style>
+.box{
+	height: 2rem; width: 30rem; 
+	box-shadow: 0 0 5px white inset;
+	border: 1px solid black;
+	background:#003366
+}
+.progress{
+	width: 10rem;
+	height: 2rem;
+	background: linear-gradient(180deg, #00CCCC,#00CCCC,#009999);
+	transition: all 3s;
+	box-shadow: 0 0px 5px white
+}
+.box:hover .progress{
+	width: 30rem
+}
+</style>
+
+
+</body>
+</html>

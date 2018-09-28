@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 测试页面</title>
+</head>
+<body>
+	<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+}
+#wrap {
+    height: auto; 
+    min-height: 100%;
+}
+#main {
+    padding-bottom: 150px; /* 和footer相同的高度 */
+}  
+#footer {
+    margin-top: -150px; /* footer高度的负值 */
+    height: 150px;
+	background: #0c8ed9
+}
+</style>
+
+<div id="wrap">
+    <div id="main">正文</div>
+</div>
+<div id="footer">底部</div> <!--底部和外层同级-->
+
+<ul>
+	<li>列表0</li>
+	<li>列表1</li>
+	<li>列表2</li>
+	<li>列表3</li>
+	<li>列表4</li>
+</ul>
+</body>
+
+<script type="text/javascript">
+ 	let dom = document.getElementsByTagName('li')
+ 	{
+ 		for (let i = 0; i < dom.length; i++) {
+	 		dom[i].addEventListener('click',function(){
+	 			console.log(i)
+	 		},false)
+	 	}
+	 	let b = 2
+ 	}
+ 	// console.log(b)
+ 	
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="test.css">
+    <title>Document</title>
+</head>
+<body>
+<section class="fill-wrapper">
+    <div class="fill">
+        <h2>请选择号码</h2>
+        <ul class="fill-list">
+            <li id="location">
+                <div class="p-title">号码归属</div>
+                <div class="p-content p-select grey">请选择号码归属地</div>
+            </li>
+            <li id="number">
+                <div class="p-title">选择号码</div>
+                <div class="p-content p-select" id="phone"></div>
+            </li>
+        </ul>
+        <p class="numberTips">
+            您已选择靓号，协议期为入网当月及后续的<i>12</i>
+            个月。
+        </p>
+    </div>
+</section>
+<section id="area" class="sidebar location slip">
+    <ul id="province" class="first-list">
+        <li data-code="11">北京</li>
+        <li data-code="31">上海</li>
+        <li data-code="51" class="">广东</li>
+        <li data-code="38" class="selected">福建</li>
+        <li data-code="36">浙江</li>
+        <li data-code="13">天津</li>
+        <li data-code="91">辽宁</li>
+        <li data-code="34">江苏</li>
+        <li data-code="19">山西</li>
+        <li data-code="89">新疆</li>
+        <li data-code="70">青海</li>
+        <li data-code="18">河北</li>
+        <li data-code="17">山东</li>
+        <li data-code="50">海南</li>
+        <li data-code="84">陕西</li>
+        <li data-code="10">内蒙古</li>
+        <li data-code="83">重庆</li>
+        <li data-code="71">湖北</li>
+        <li data-code="90">吉林</li>
+        <li data-code="88">宁夏</li>
+        <li data-code="97">黑龙江</li>
+        <li data-code="79">西藏</li>
+        <li data-code="74">湖南</li>
+        <li data-code="81">四川</li>
+        <li data-code="76">河南</li>
+        <li data-code="30">安徽</li>
+        <li data-code="87">甘肃</li>
+        <li data-code="86">云南</li>
+        <li data-code="85">贵州</li>
+        <li data-code="75">江西</li>
+        <li data-code="59">广西</li>
+    </ul>
+    <ul id="city" class="second-list">
+        <li data-code="380">福州</li>
+        <li data-code="390" class="selected">厦门</li>
+        <li data-code="480">泉州</li>
+        <li data-code="395">漳州</li>
+        <li data-code="386">宁德</li>
+        <li data-code="385">莆田</li>
+        <li data-code="387">南平</li>
+        <li data-code="389">三明</li>
+        <li data-code="384">龙岩</li>
+    </ul>
+</section>
+<div class="mask" hidden="" style="display: block;"></div>
+</body>
+</html>

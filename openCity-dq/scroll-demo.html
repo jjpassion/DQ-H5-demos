@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <meta name="viewport" content="width=750 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scroller demo</title>
+    <script src="js/Animate.js"></script>
+    <script src="js/Scroller.js"></script>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #F0F0F0;
+    }
+    #container {
+        min-height: 100vh;
+        overflow: auto;
+        background: antiquewhite;
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 0;*/
+    }
+    #testCanvas {
+        height: 100%;
+        overflow: auto;
+    }
+</style>
+<body>
+<!--<div class="wrap">ddd</div>-->
+<div id="container">
+    <!--<div class="test" id="content" style="height: 2000px; background: lightpink; font-size: 90px; line-height: 120px;">-->
+        <!--<li>1</li>-->
+        <!--<li>2</li>-->
+        <!--<li>3</li>-->
+        <!--<li>4</li>-->
+        <!--<li>5</li>-->
+        <!--<li>6</li>-->
+        <!--<li>7</li>-->
+        <!--<li>8</li>-->
+        <!--<li>9</li>-->
+        <!--<li>10</li>-->
+    <!--</div>-->
+    <!--<canvas id="testCanvas"></canvas>-->
+    <!--<div id="testCanvas" height="1334" width="750"></div>-->
+</div>
+<!--<script src="js/page/domInit.js"></script>-->
+<script>
+    // domInit(0,0, function (left, top, zoom) {
+    //     console.log(top)
+    // })
+    var container = document.getElementById('container');
+    var scroller = new Scroller(function(left, top, zoom) {
+        console.log(left, top, zoom)
+    }, {
+        zooming: true,
+
+    })
+    // 需要四个参数：clientWidth, clientHeight, contentWidth, contentHeight
+    scroller.setDimensions(750, 1334, 3000, 3000);
+
+    // var reflow = function () {
+    //     var contentWidth = window.innerWidth;
+    //     var contentHeight = window.innerHeight;
+    //     // var clientWidth =
+    //     // console.log(111111, contentWidth, contentHeight)
+    //     scroller.setDimensions(contentWidth, contentHeight, contentWidth, 2000);
+    //     // scroller.setDimensions(contentWidth, contentHeight, contentWidth, contentHeight);
+    // };
+    //
+    // window.addEventListener("resize", reflow, false);
+    // reflow();
+
+
+
+    if ('ontouchstart' in window) {
+
+        container.addEventListener("touchstart", function (e) {
+            // Don't react if initial down happens on a form element
+            if (e.touches[0] && e.touches[0].target && e.touches[0].target.tagName.match(/input|textarea|select/i)) {
+                return;
+            }
+            scroller.doTouchStart(e.touches, e.timeStamp);
+            e.preventDefault();
+        }, false);
+
+        document.addEventListener("touchmove", function (e) {
+            scroller.doTouchMove(e.touches, e.timeStamp, e.scale);
+        }, false);
+
+        document.addEventListener("touchend", function (e) {
+            scroller.doTouchEnd(e.timeStamp);
+        }, false);
+
+        document.addEventListener("touchcancel", function (e) {
+            scroller.doTouchEnd(e.timeStamp);
+        }, false);
+
+    } else {
+
+        var mousedown = false;
+
+        container.addEventListener("mousedown", function (e) {
+            if (e.target.tagName.match(/input|textarea|select/i)) {
+                return;
+            }
+
+            scroller.doTouchStart([{
+                pageX: e.pageX,
+                pageY: e.pageY
+            }], e.timeStamp);
+
+            mousedown = true;
+        }, false);
+
+        document.addEventListener("mousemove", function (e) {
+            if (!mousedown) {
+                return;
+            }
+
+            scroller.doTouchMove([{
+                pageX: e.pageX,
+                pageY: e.pageY
+            }], e.timeStamp);
+
+            mousedown = true;
+        }, false);
+
+        document.addEventListener("mouseup", function (e) {
+            if (!mousedown) {
+                return;
+            }
+
+            scroller.doTouchEnd(e.timeStamp);
+            mousedown = false;
+        }, false);
+
+        container.addEventListener(navigator.userAgent.indexOf("Firefox") > -1 ? "DOMMouseScroll" : "mousewheel", function (e) {
+            scroller.doMouseZoom(e.detail ? (e.detail * -120) : e.wheelDelta, e.timeStamp, e.pageX, e.pageY);
+        }, false);
+    }
+
+</script>
+</body>
+</html>

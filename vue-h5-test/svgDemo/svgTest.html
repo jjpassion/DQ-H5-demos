@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<style>
+.clip-path {
+    transition: 0.4s cubic-bezier(1, -1, 0, 2);
+    /*-webkit-clip-path: circle(180px at 128px 95px);*/
+    clip-path: circle(180px at 128px 95px);
+}
+/* clip-path: circle(50px at 50px 50px) 表示在元素的 （50px, 50px）处，裁剪生成一个半径为 50px 的圆，以元素的左上角为坐标起点 */
+.clip-path:hover {
+    -webkit-clip-path: circle(95px at 128px 95px);
+    clip-path: circle(95px at 128px 95px);
+}
+</style>
+<strong>鼠标hover:</strong>
+<p><img src="https://image.zhangxinxu.com/image/study/s/s256/mm1.jpg" class="clip-path"></p>
+
+<style>
+  /*svg { fill: url(#lineGradient); }*/
+  svg {
+    height: 50vh;
+    width: 80vw;
+  }
+</style>
+<svg>
+    <defs>
+      <!-- （x1，y1）到（x2，y2）的连线是线性渐变的径向。原来单位是100% 一直以为是左边点，是不是sa-->
+        <linearGradient x1="0" y1="0" x2="1" y2="1" id="lineGradient" >
+            <stop offset="0" stop-color="#FF0909"/>
+            <stop offset="0.2" stop-color="#F3481A"/>
+            <stop offset="1" stop-color="#00BCF2"/>
+        </linearGradient>
+        <linearGradient id="linearGradient_x1_1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255,255,0); stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:rgb(255,0,0); stop-opacity:1"/>
+      </linearGradient>
+          <!-- <linearGradient id="liquidGrad" x1="557" y1="150" x2="557" y2="546" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#FF0909"/>
+        <stop offset="0.2" stop-color="#F3481A"/>
+        <stop offset="0.5" stop-color="#FABA2C"/>
+        <stop offset="1" stop-color="#00BCF2"/>
+      </linearGradient> -->
+    </defs>
+    <!-- cx 和 cy 属性定义圆点的 x 和 y 坐标 -->
+    <circle cx="100" cy="100" r="100" fill="url(#lineGradient)" />
+    <circle cx="220" cy="220" r="70" fill="url(#linearGradient_x1_1)" />
+    
+</svg>
+
+<svg id="svgForStroke" width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <line fill="none" stroke="#000000" stroke-width="10" stroke-dasharray="10" stroke-linejoin="null" stroke-linecap="round" x1="10" y1="10" x2="400" y2="10"/>
+ </g>
+</svg>
+
+</body>
+</html>

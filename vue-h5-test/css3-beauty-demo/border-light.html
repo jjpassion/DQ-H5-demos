@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>科技感内发光边框</title>
+</head>
+<body>
+	<h1>科技感内发光边框&图片边框</h1>
+	<p>边框内发光可以带来一种 未来科技感（配上动画效果更棒）</p>
+	<div class='box'>
+		数据总览
+	</div>
+	<br><br><br>
+	<div class='panel'>正常</div>
+	<br><br><br>
+	<div class='panel panel2'>外发光</div>
+	<style>
+	.panel{
+		height: 10rem; width: 20rem; color:rgba(255,255,255,.9);
+		border: 20px solid transparent;
+		border-image: url(http://www.imaoda.com/s/img/tpl/border.png) 5%;
+		background:rgba(0,0,0,.3);
+	}
+	.panel2{
+		box-shadow:  0 0 5rem rgb(0,110,150)
+	}
+	</style>
+	<style>
+	body{
+		background: black;padding: 10px;
+		color:#fff;
+	}
+	.box{
+		height: 20rem; width: 90%; color:white; padding: 1rem;
+		box-shadow: 0 0 3rem rgba(100,200,255,.5) inset;
+		background: rgba(0,0,0,.3); 
+	}
+	</style>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>立体感面板-带标题栏</title>
+</head>
+<body>
+	<h1>立体感面板-带标题栏</h1>
+	<p>面板头采用上深下浅过渡，面板采用半透明黑<br>侧滑弹出动画效果更佳</p>
+<!-- 
+flex-flow 属性是 flex-direction 和 flex-wrap 属性的复合属性。
+flex-flow 属性用于设置或检索弹性盒模型对象的子元素排列方式。
+flex-direction 属性规定灵活项目的方向。
+flex-wrap 属性规定灵活项目是否拆行或拆列。
+ -->
+<div class='panel'>
+	<div class='panel-head'>用户行为分析</div>
+	<div class='panel-body'>dfdfdf</div>
+</div>
+<style>
+.panel{
+	display: flex; flex-flow: column nowrap;
+	height: 23rem; width: 40rem;
+	box-shadow: 0 0 1rem rgba(0,0,0,.5);
+}
+.panel-head{
+	font-size: 1.5rem; color: rgba(255,255,255,.7); line-height: 3rem; text-align: center;
+	background: linear-gradient(rgb(0,20,30), rgb(0,40,70));
+	border: 2px solid rgba(0,90,120,.3);
+	
+}
+.panel-body{
+	flex: 1 auto;
+	background: rgba(0,0,0,.3);
+	border: 2px solid rgba(0,90,120,.4);
+	border-top:none
+}
+.panel:hover{
+	filter:brightness(1.2)
+}
+</style>
+
+</body>
+</html>

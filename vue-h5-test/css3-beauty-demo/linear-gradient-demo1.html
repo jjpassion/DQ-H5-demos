@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<body>
+	<h1>元素背景（框）</h1>
+	<p>虽然用到了border-image,但是实际传递的只是linear-gradient</p>
+	<div class="box">
+		.box{
+	height: 400px; width: 400px;
+	border: 30px solid transparent;
+	border-image: linear-gradient(45deg,red,blue) 10%
+}
+	</div>
+	<p>上述方法无法实现 border-radius，可采用双层 div 的方式，底层渐变层，上层内容层。缺点是大小需要精确度量。</p>
+	<div class='border'>
+		<div class='content'>
+	</div>
+</div>
+<style>
+.box{
+	height: 200px; width: 200px;
+	border: 30px solid transparent;
+	border-image: linear-gradient(45deg,red,blue) 10%
+}
+.border{
+	width: 300px; height: 300px; border-radius: 20px;
+	background: linear-gradient(45deg,red,blue);
+	overflow: hidden;
+	margin-top: 20px;
+}
+.content{
+	width: 260px; height: 260px;
+	background: white;
+	margin: 20px;
+}
+</style>
+
+</body>
+</html>

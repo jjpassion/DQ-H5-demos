@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>filter2</title>
+</head>
+<body>
+	<h1>filter 高斯背景模糊</h1>
+	<p>filter 的还有一个特效是能让图像在边缘地带跟背景很自然的过渡到一块去</p>
+	<div class='suit' >
+		<div class='figure'></div>
+		<div class='modal'>
+			功夫熊猫
+		</div>
+	</div>
+	<style>
+	body {
+		/*background-color: */
+	}
+	.suit{
+		position: relative
+	}
+	.figure{
+		background: url(http://www.imaoda.com/s/img/github/21.jpg);
+		background-size: 200%;
+		height: 200px; width: 400px;
+		filter: blur(16px)
+	}
+	.modal{
+		position: absolute;
+		height: 200px; width: 400px; top: 0px; left: 0px; 
+		background: rgba(0,0,0,.5);
+		color: white; text-align: center
+	}
+	</style>
+
+</body>
+</html>

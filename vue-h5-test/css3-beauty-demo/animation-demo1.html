@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态旋转边框</title>
+</head>
+<body>
+	<h1>动态旋转边框</h1>
+	<ul>
+		<li>图中两个外围的圆环采用 absolute 定位，background-position:center 居中，background-size 调整大小，并添加 animation 使其动起来
+		</li>
+		<li>任务图像靠外层的 flex 布局实现居中</li>
+	</ul>
+
+<div class='box'>
+    <div class='ring-outer'></div>
+    <div class='ring-inner'></div>
+    <div class='avatar'></div>
+</div>
+<style>
+.box{
+  position: relative; width: 220px; height: 220px;
+  display: flex; justify-content: center; align-items: center
+}
+.ring-inner{
+  height: 220px; width: 220px; position: absolute;
+  background: url(http://www.imaoda.com/s/img/tpl/ring-inner.png) no-repeat;
+  background-size: 90%; background-position: center;
+  animation: clockwise 3s linear infinite;
+}
+.ring-outer{
+  height: 220px; width: 220px; position: absolute;
+  background: url(http://www.imaoda.com/s/img/tpl/ring-outer.png) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  animation: anti-clockwise 3s linear infinite;
+}
+.avatar{
+  height: 160px; width: 160px;
+  background: url(http://www.imaoda.com/s/img/lessons/92.jpg);
+  background-size: cover;
+  border-radius: 50%
+}
+@keyframes clockwise{
+  100%{
+    transform: rotate(360deg)
+  }
+}
+@keyframes anti-clockwise{
+  0%{
+    transform: rotate(360deg)
+  }
+}
+</style>
+
+
+</body>
+</html>

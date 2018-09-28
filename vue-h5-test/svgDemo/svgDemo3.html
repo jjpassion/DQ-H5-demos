@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>demo3</title>
+</head>
+<style>
+body{
+	background: #FCEFD6;
+	padding: 0;
+	margin: 0;
+}
+svg {
+	background: pink;
+	width: 100%;
+	height: 100%;
+}
+.label{
+ fill:#FFFCF9;
+ font-size:1.8em;
+ font-family: "din-condensed-web", sans-serif;
+ /* font-family: "filson-soft", sans-serif; */
+ text-anchor:middle;  /* svg 专有的文本对齐方式 */
+ letter-spacing:1.2px;
+}
+</style>
+<body>
+	<!-- viewBox的四个参数分别代表：最小X轴数值；最小y轴数值；宽度；高度。
+前两个暂时用不到，个人理解除非要对内部svg做整体位移，否则一般都是0 0，暂时先不做解释，重点关注后两个参数。
+想象一下viewBox是个400*400的正方形，但是单位不是px，也不是任何一个css单位，相当于把一个固定的宽度/高度-分成的分数 -->
+
+<!-- SVG的<defs>元素用于预定义一个元素使其能够在SVG图像中重复使用。例如你可以将一些图形制作为一个组，并用<defs>元素来定义它，然后你就可以在SVG图像中将它当做简单图形来重复使用。
+在<defs>元素中定义的图形不会直接显示在SVG图像上。要显示它们需要使用<use>元素来引入它们。如下面的代码所示
+	<svg xmlns="http://www.w3.org/2000/svg">  
+  <defs>
+    <g id="shape">
+        <rect x="50" y="50" width="50" height="50" />
+        <circle cx="50" cy="50" r="50" />
+    </g>
+  </defs>
+ 
+  <use xlink:href="#shape" x="50" y="50" />
+  <use xlink:href="#shape" x="200" y="50" /> 
+</svg>
+其中：
+元素g是用来组合对象的容器。添加到g元素上的变换会应用到其所有的子元素上。添加到g元素的属性会被其所有的子元素继承。此外，g元素也可以用来定义复杂的对象，之后可以通过<use>元素来引用它们。
+-->
+
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 800">
+		<defs>
+			<!-- （x1，y1）到（x2，y2）的连线是线性渐变的径向。
+				渐变径向起点之前的为最小offset的stop-color的纯色。
+				渐变径向终点之后的为最大offset的stop-color的纯色。
+			-->
+			<linearGradient id="liquidGrad" x1="557" y1="150" x2="557" y2="546" gradientUnits="userSpaceOnUse">
+	      <stop offset="0" stop-color="#FF0909"/>
+	      <stop offset="0.2" stop-color="#F3481A"/>
+	      <stop offset="0.5" stop-color="#FABA2C"/>
+	      <stop offset="1" stop-color="#00BCF2"/>
+	    </linearGradient>
+	    <!-- 使用 需要用：fill="url(#liquidGrad)" 对应上面的id-->
+			<rect id="tube" x="357" y="150" width="86" height="400" rx="43" ry="43" />
+			<!-- clipPath 剪切路径用于指定可绘制区域。从概念上来说，当绘制的图形超出了剪切路径所指定的区域，超出区域的部分将不会被绘制。 -->
+			<clipPath id="liquidMask">
+        <use xlink:href="#tube" class="liquidMask" />
+      </clipPath>
+      <clipPath id="tubeMask">
+        <use xlink:href="#tube" class="liquidMask" />
+    	</clipPath>
+    	<path id="liquid" d="M757,552v490H357V552c50,0,50,20,100,20s50-20,100-20,50,20,100,20S707,552,757,552Z" />
+			<mask id="gradMask">   
+	      <use xlink:href="#liquid" class="liquid" x="0" fill="#FCEFD6" />
+	      <use xlink:href="#liquid" class="liquid" x="0" fill="#EEE" opacity="0.7"/>
+	    </mask>
+		</defs>
+		<g class="whole" transform="translate(0, -40)">
+       <use xlink:href="#tube" class="tubeBg" fill="#C8D9D3" opacity="0.61"/>
+       <g class="dragger" transform="translate(-6, 0)">
+        <circle cx="294" cy="540" r="36" fill="#3A3335"/>
+        <path class="dragTip" d="M315.5,556.76,299.24,540.5l16.26-16.26,36.26,16.26Z" fill="#3A3335"/>
+        <text class="label" x="294" y="551">100</text>
+      </g>
+      <g mask="url(#gradMask)">
+		    <use xlink:href="#tube" fill="url(#liquidGrad)" />
+		  </g> 
+		  <line class="tubeShine" x1="371" y1="200" x2="371" y2="443" fill="none" stroke="#FFF" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" opacity="0.21" stroke-dasharray="153 30" stroke-dashoffset="-20"/>  
+    </g>
+
+	</svg>
+</body>
+</html>

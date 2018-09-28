@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<body>
+	<h1>旋转光芒效果</h1>
+	<pre>
+如果有现成的PS制作的光芒更好，低配版的光芒制作方法：
+
+1、在ppt中创建一个三角，选择线性过渡，顶部黄色，底部黄色透明
+2、三角复制成两份，做成8子形状，然后复制n个8，旋转成光芒
+
+旋转光芒利用了2个要素，animation:my 5s linear 0s infinite ，
+transform:rotate(360deg)。动态修改动画持续时间，如改成2s，可以实现旋转加速
+
+	</pre>
+	<ul>
+		<li>光芒元素用 static 定位，flex 居中，如果用 top/left+tranlate 居中，与旋转 rotate 冲突</li>
+		<li>按钮元素用 absolute 定位，top/left+tranlate 居中 （因为 absolute 元素不被 flex 控制）
+</li>
+	</ul>
+
+<div class='box'>
+	<img class='light' src="http://www.imaoda.com/s/img/tpl/light.png" alt="">
+	<!-- <div class='btn'>开始</div> -->
+</div>
+<style>
+body{
+	background: rgb(14,28,44);
+	color: #fff;
+}
+.box{
+	position: relative; height: 400px; width: 400px; 
+	display: flex; justify-content: center; align-items: center;
+}
+.light{
+	width: 200px; height: 200px;	
+	filter: drop-shadow(0 0 50px yellow);
+	animation: rotate linear 3s infinite;
+}
+.btn{
+	position: absolute; 
+	top: 50%; left: 50%; transform: translate(-50%,-50%); padding:3rem;
+	background:green; color: white; border-radius: 50%;
+}
+@keyframes rotate{
+	100%{
+		transform: rotate(360deg)
+	}
+}
+</style>
+
+</body>
+</html>

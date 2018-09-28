@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>filter-blur</title>
+</head>
+<body>
+<div class='box'>
+	<div class='blur-modal'></div>
+	<div class='black-modal'> 描述文字 </div>
+</div>
+<style>
+/* background : fixed ，他能使背景图片相对于浏览器（还是盒子？）进行固定。 */
+.box{
+	position: relative; height:200px; width:300px;
+	background: fixed url(http://www.imaoda.com/s/img/github/21.jpg);
+}
+.blur-modal{
+	position: absolute; height:50px; width:300px;
+	top: 150px;
+	background: fixed url(http://www.imaoda.com/s/img/github/21.jpg);
+	filter:blur(1rem)
+}
+.black-modal{
+	position: absolute; height:50px; width:300px;
+	top: 150px;
+	background: rgba(0,0,0,.2);
+	color: white
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>青桔单车城市故事</title>
+  <meta charset="utf-8">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="viewport" content="width=750 user-scalable=no">
+  <meta name="keywords" content="青桔城市故事">
+  <meta name="description" content="青桔城市故事">
+  <link rel="stylesheet" href="css/ui.css"/>
+  <script src="js/polyfill.js"></script>
+  <!--<script src="js/vconsole.js"></script>-->
+  <script src="js/Scroller.js"></script>
+  <script src="js/Animate.js"></script>
+  <script src="js/easel.js"></script>
+  <script src="js/Tween.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/preload.js"></script>
+  <script src="https://assets.xiaojukeji.com/??kui/lib/1.1.4/zepto.js,kui/golden/3.1.4/omega.js,kui/base/1.0.11/base.js,kui/base/1.0.11/event.js,kui/lib/1.1.4/zepto/detect.js,kui/base/1.0.11/platform.js,kui/native/1.4.12/didinative.js,kui/native/1.4.12/dididriver.js,kui/lib/1.1.4/promise.js,kui/lib/1.1.4/sha1.js,kui/dataing/1.5.7/kop.js,kui/native/1.4.12/native.js,kui/login/3.0.16/unifiedLogin.js,kui/golden/3.1.4/golden.js,kui/didisdk/1.0.2/sdk.js,kui/share/2.0.2/clientshare.js,kui/wx/2.0.1/share.js,kui/share/2.0.2/didiSdkShare.js,kui/share/2.0.2/share.js"></script>
+  <script type="text/javascript" src="https://g.alicdn.com/dingding/open-develop/1.9.0/dingtalk.js"></script>
+</head>
+<body>
+<div class="load">
+  <img class="boy" src="img/ride/ride_boy1-1.png" alt="">
+  <img class="boy-1" src="img/ride/ride_boy1-2.png" alt="">
+  <div class="progress_wrap">
+    <div class="progress"></div>
+    <div class="progressBar"></div>
+  </div>
+  <div class="progressText">
+    0%
+  </div>
+  <img class="icon" src="img/icon.png" alt="">
+</div>
+<div id="container">
+  <canvas id="testCanvas"></canvas>
+</div>
+<script type="text/javascript">
+  // var vConsole = new VConsole();
+  var contentWidth = window.innerWidth;
+  var contentHeight = window.innerHeight;
+  // 设置分享内容
+  var ShareConfig = {
+    title: '青桔城市故事',
+    desc: '免费领取青桔礼包，开启城市故事',
+    imgUrl: '//pt-starimg.didistatic.com/static/starimg/img/1531362573702AkGQSnGsGSw95kJq9DO.jpg',
+    // 默认分享当前页面
+    link: 'https://page.xiaojukeji.com/package/openCity/index.html',
+    // 分享途径
+    shareChannel: ['weixin_timeline', 'weixin_appmsg', 'sina_weibo', 'qq_appmsg', 'qzone']
+  };
+
+  (function () {
+    // alert(dd.isDingtalk());
+    window.sessionStorage.setItem('MONTH_CARD_SHARE', JSON.stringify(ShareConfig))
+    dd.ready(function () {
+      dd.biz.navigation.setRight({
+        show: true,//控制按钮显示， true 显示， false 隐藏， 默认true
+        control: true,//是否控制点击事件，true 控制，false 不控制， 默认false
+        text: '',//控制显示文本，空字符串表示显示默认文本
+        onSuccess: function (result) {
+          //如果control为true，则onSuccess将在发生按钮点击事件被回调
+          dd.biz.util.share({
+            type: 0, //分享类型，0:全部组件 默认； 1:只能分享到钉钉；2:不能分享，只有刷新按钮
+            url: 'https://page.xiaojukeji.com/package/openCity/index.html',
+            content: '免费领取青桔礼包，开启城市故事',
+            title: '青桔城市故事',
+            image: 'https://pt-starimg.didistatic.com/static/starimg/img/1531362573702AkGQSnGsGSw95kJq9DO.jpg',
+            onSuccess: function () {
+            },
+            onFail: function (err) {
+            }
+          });
+        },
+        onFail: function (err) {
+        }
+      });
+    });
+  })();
+  if (window.ShareConfig && KUI.Share) {
+    var share = new KUI.Share(window.ShareConfig);
+  }
+  $.ajax({
+    type: 'post',
+    url: 'https://star.xiaojukeji.com/data/ddPage_0a14k8RI',
+    success: function (data) {
+      var resetShare = {
+        title: data.title,
+        desc: data.content,
+        link: 'https://page.xiaojukeji.com/package/openCity/index.html',
+        imgUrl: data.url,
+        // 分享途径
+        shareChannel: ['weixin_timeline', 'weixin_appmsg', 'sina_weibo', 'qq_appmsg', 'qzone']
+      };
+      share.resetShare(resetShare);
+      sessionStorage.setItem('MONTH_CARD_SHARE', JSON.stringify(resetShare));
+      dd.biz.navigation.setRight({
+        show: true,//控制按钮显示， true 显示， false 隐藏， 默认true
+        control: true,//是否控制点击事件，true 控制，false 不控制， 默认false
+        text: '',//控制显示文本，空字符串表示显示默认文本
+        onSuccess: function (result) {
+          //如果control为true，则onSuccess将在发生按钮点击事件被回调
+          dd.biz.util.share({
+            type: 0, //分享类型，0:全部组件 默认； 1:只能分享到钉钉；2:不能分享，只有刷新按钮
+            url: 'https://page.xiaojukeji.com/package/openCity/index.html',
+            content: data.desc,
+            title: data.title,
+            image: /https|http/g.test(data.img) ? data.img : 'https:' + data.img,
+            onSuccess: function () {
+            },
+            onFail: function (err) {
+            }
+          });
+        },
+        onFail: function (err) {
+        }
+      });
+    }
+  });
+</script>
+<script src="js/utils.js"></script>
+<script src="js/page/imgRender_babel.js"></script>
+<script src="js/page/domInit.js"></script>
+<script src="js/page/soundPreload_babel.js"></script>
+</body>
+</html>

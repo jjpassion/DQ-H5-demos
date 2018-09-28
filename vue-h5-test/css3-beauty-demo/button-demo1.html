@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<body>
+	<h1>立体按钮按压效果</h1>
+	<p>按压前，按钮浮起，有阴影；按压后，按钮下去，阴影消失，体积缩小（离视野更远）</p>
+<div class='box'>
+	<span>button</span>
+</div>
+<h1>金属质感过渡</h1>
+<p>45度角，两侧深，中间浅</p>
+<div class="box2"></div>
+<div class="box3"></div>
+<style>
+.box{
+	height: 100px; width: 300px; background: green; margin: 2rem;
+	box-shadow: 0 0 1rem gray;
+	cursor: pointer;
+	transition: all .3s;
+	border-radius: 50px;
+	text-align: center;
+}
+.box:active{
+	box-shadow: 0 0 0px gray; transform: scale(0.99)
+}
+.box2{
+	height: 3rem; width: 5rem;
+	border-radius: 1rem;
+	background: linear-gradient(45deg, rgb(31,89,146),rgb(35,175,230),rgb(29,136,203) )
+}
+
+.box3{
+	margin-top: 20px;
+	height: 3rem; width: 3rem; 
+	line-height: 2.8rem; text-align: center; 
+	color: white; 
+	text-shadow: 1px 1px 5px black;
+	font-weight: bold;
+	font-size: 2rem;
+	border-radius: .5rem;
+	background: linear-gradient(225deg, rgb(31,89,146),rgb(31,89,146) 10% ,rgb(35,175,230) 60%,rgb(35,175,230) 70%,rgb(29,136,203) );
+	box-shadow: 0 0 5px black
+}
+.box3:hover{
+	box-shadow: 0 0 5px gray inset;
+	transform: scale(.95)
+}
+
+</style>
+</body>
+</html>

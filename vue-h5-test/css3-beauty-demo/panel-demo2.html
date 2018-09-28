@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>角标面板</title>
+</head>
+<body>
+	<h1>角标面板</h1>
+	<p>
+		角标与边框同色
+		<br>缺角矩形利用了 linear-gradient 透明效果
+	</p>
+<!-- 
+flex-flow 属性是 flex-direction 和 flex-wrap 属性的复合属性。
+flex-flow 属性用于设置或检索弹性盒模型对象的子元素排列方式。
+flex-direction 属性规定灵活项目的方向。
+flex-wrap 属性规定灵活项目是否拆行或拆列。
+ -->
+<div class='panel' data-corner='New'></div>
+<style>
+body{
+	padding: 10rem;background: rgba(0,0,0,.9)
+}
+.panel{
+	height: 12rem; width: 24rem;
+	border: 1px solid rgba(22,78,137,1);
+	background: rgba(13,35,61,1);
+	position: relative;
+}
+.panel::after{
+	content: attr(data-corner);
+	display: block; position: absolute; top: 0; right: 0; 
+	width: 5rem; padding: 0 1rem; overflow: hidden; text-align: right; color: rgba(255,255,255,.9);
+	background: linear-gradient(45deg,transparent 0% , transparent 30%,  rgba(22,78,137,1) 30%,  rgba(22,78,137,1) 100%)
+}
+</style>
+
+</body>
+</html>
