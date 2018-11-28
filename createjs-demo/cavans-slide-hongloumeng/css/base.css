@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: outside none;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+body {
+    font-size: 1.4rem;
+    line-height: 1.65;
+    text-align: center;
+    background: #E9DFCC;
+    color: #333;
+}
+
+i {
+    font-style: normal;
+}
+
+/*.wrap{max-width:750px;margin:0 auto;}*/
+canvas {
+    vertical-align: top;
+}
+
+/*#share{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8) url(./res/share.png) no-repeat center top;background-size:100% auto;}*/
