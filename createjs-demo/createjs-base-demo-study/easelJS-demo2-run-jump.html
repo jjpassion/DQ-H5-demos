@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <meta name="format-detection"content="telephone=no">
+  <title>跑跳的小人</title>
+  <link href="style/reset.css" rel="stylesheet">
+  <style>#canvas{background: #ffffff;}
+  #btn{width: 80px;height: 40px; margin-left: 440px;position: absolute;bottom: 5%;left: 50%;margin-left: -40px; border: none; border-radius: 5px;background: #ccc;}
+  </style>
+</head>
+<body>
+<canvas id='canvas' width="750" height="1334">您的浏览器不支持canvas，请使用现代浏览器。</canvas>
+<script src="//cdn.bootcss.com/EaselJS/0.8.0/easeljs.min.js" charset="utf-8"></script>
+<!--<script src="js/easeljs-0.7.1.min.js"></script>-->
+<script>
+  var w = document.documentElement.clientWidth,
+      h = document.documentElement.clientHeight;
+  var  stage=new createjs.Stage("canvas"),
+      container=new createjs.Container(),
+      // 定义SpriteSheet 参数
+      data={
+        "animations":{
+          "run": [0, 25, "jump"],
+          //start,end,next,speed开始帧，结束帧，下一个动作，运行速度
+          "jump": [26, 63, "run",1]
+        },
+        "images": ["images/runningGrant.png"],
+        "frames":{
+          //单个帧的高度，宽度，就是png图片里面那么多个帧一个帧的大小
+          "height": 292.5,
+          "width":165.75,
+          //相对于原始偏移的位置
+          "regX": 0,
+          "regY": 0,
+          //帧数
+          "count": 64
+        }
+      };
+  //适配用
+  stage.canvas.width = w;;
+  stage.canvas.height = h;
+  //实例精灵动画集
+  var move = new createjs.SpriteSheet(data);
+  //SpriteSheet类设置帧和动画,里面的run为开始的动画
+  var grant = new createjs.Sprite(move,"run");
+  //设置在舞台中的位置
+  grant.x=20;
+  grant.y=120;
+
+  // 把动画放到舞台上，创建一个间隔事件侦听，进行动画
+  container.addChild(grant);
+  stage.addChild(container);
+  createjs.Ticker.setFPS(20);
+  createjs.Ticker.addEventListener("tick",stage);
+  stage.update();
+</script>
+</body>
+</html>

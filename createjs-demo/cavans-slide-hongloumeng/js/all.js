@@ -319,8 +319,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			createjs.EventDispatcher.initialize(a.prototype);
 
 			that.loader.installPlugin(createjs.Sound);
-			createjs.Sound.initializeDefaultPlugins();
-			that.soundsList = {};
+			createjs.Sound.initializeDefaultPlugins(); //安装回放插件
+      that.soundsList = {};
 
 			that.bg = new createjs.Shape();
 			that.bg.graphics.beginFill(toolkits.BGColor).drawRect(0, 0, toolkits.ASSETS_WIDTH, toolkits.ASSETS_HEIGHT).endFill();

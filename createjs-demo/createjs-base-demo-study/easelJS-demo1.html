@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>easel-js 画布-画板</title>
+</head>
+<body>
+<canvas id="demoCanvas" width="750" height="500"></canvas>
+<script src="//cdn.bootcss.com/EaselJS/0.8.0/easeljs.min.js" charset="utf-8"></script>
+<script>
+  window.onload = () => {
+    // 定义一个舞台通过创建一个新的舞台实例，通过在我们的画布元素的定义的id，这个舞台将我们所有的显示对象和视觉容器展示出来。
+    var stage = new createjs.Stage("demoCanvas");
+    // 让我们创建一个形状，首先，我们需要一个新的形状实例。然后我们可以使用形状的图形API去定义它的颜色和边框，它的位置在canvas的x和y坐标，并添加它在我们的舞台。
+    var circle = new createjs.Shape() // shape n. 形状；模型
+    circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
+    circle.x = 100;
+    circle.y = 100;
+    stage.addChild(circle);
+
+    stage.update();
+
+
+    // 图像绘制
+    var img = new Image();
+    img.src = 'https://static.mobike.com/taxi-driver/webapp/dist/img/p3_img3.0931f18.png';
+    img.onload = function () {
+      var bg = new createjs.Bitmap(img); // img对象 或者 url
+      bg.x = 0
+      bg.y = 0
+
+      // //遮罩图形
+      shape = new createjs.Shape();
+      shape.graphics.beginFill("red").drawCircle(0, 0, 100);
+      shape.x = 200;
+      shape.y = 100;
+      bg.mask = shape;     //给图片bg添加遮罩
+
+      // 给图片增加滤镜效果
+      var blur = new createjs.BlurFilter(18,18,50); // blurX, blurY, quality
+      bg.filters = [blur];
+
+      //  我们发现，图片还是没有变模糊，原因是图片添加了filter后stage立即刷新，filter只能保持一帧的效果，第二帧filter则失效了。而使用图片的cache()方法后，可以使得无论舞台怎么刷新，都可以保持住Filter的效果，添加cache还有很多作用，可以提高FPS，缓存等
+      bg.cache(0,0,bg.image.width,bg.image.height);
+
+      stage.addChild(shape);
+      stage.addChild(bg);
+      stage.update();
+
+
+    }
+
+  }
+</script>
+</body>
+</html>
