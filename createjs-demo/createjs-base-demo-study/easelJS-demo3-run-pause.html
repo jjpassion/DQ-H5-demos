@@ -7,9 +7,30 @@
   <meta name="format-detection" content="telephone=no">
   <title>跑跳的小人</title>
 </head>
+<style>
+  #canvasId {
+    background: #ffffff;
+  }
+
+  #btn {
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    margin-left: -60px;
+    border: none;
+    border-radius: 5px;
+    background: #fc353a;
+    color: #fff;
+    font-size: 20px
+  }
+</style>
 <body>
 <canvas id='canvasId' width="750" height="1334">您的浏览器不支持canvas，请使用现代浏览器。</canvas>
+<button id='btn'>暂停</button>
 <script type="text/javascript" src="//cdn.bootcss.com/EaselJS/0.8.0/easeljs.min.js" charset="utf-8"></script>
+<!--<script src="js/easeljs-0.7.1.min.js"></script>-->
 <script>
   let w = document.documentElement.clientWidth
   let h = document.documentElement.clientHeight
@@ -24,8 +45,8 @@
   // 定义SpriteSheet 参数
   let spriteData = {
     'animations': {
-      'run': [0, 25, 'jump'], //start,end,next,speed (开始帧，结束帧，下一个动作，运行速度)
-      'jump': [26, 63, 'run', 1]
+      'run': [0, 25, 'run', 1.5], //start,end,next,speed (开始帧，结束帧，下一个动作，运行速度)
+      'jump': [26, 63, 'run', 1.5]
     },
     'images': ['images/runningGrant.png'],
     'frames': {
@@ -44,22 +65,49 @@
   let grant = new createjs.Sprite(move, "run")
 
   //设置在舞台中的位置
-  grant.x = 100
+  grant.x = 0
   grant.y = 120
 
   // 把动画放到舞台上，创建一个间隔事件侦听，进行动画
   container.addChild(grant)
   stage.addChild(container)
   createjs.Ticker.setFPS(20)
-  createjs.Ticker.addEventListener("tick", stage)
+  createjs.Ticker.addEventListener("tick", tick)
+  // stage.update(); //更新舞台
+
+  //speed用来做加速度
+  let speed = 1
+  function tick() {
+    if (!createjs.Ticker.getPaused()) {
+      grant.x += 3 * speed
+      stage.update() //更新舞台
+      speed += .01
+      if (grant.x > stage.canvas.width) {
+        grant.x = 0
+        speed = 1
+      }
+    }
+  }
+
+  //侦听鼠标事件
+  stage.addEventListener("stagemousedown", handleClick)
+  function handleClick() {
+    grant.gotoAndPlay("jump")
+  }
+
+  //设置按钮暂停
+  var btn = document.getElementById("btn")
+  btn.addEventListener("click", togglePause)
+  function togglePause() {
+    //grant.gotoAndStop();
+    //其实实现暂停和运动就是false和true切换
+    var paused = !createjs.Ticker.getPaused()
+    createjs.Ticker.setPaused(paused)
+    btn.innerHTML = paused ? "运动" : "暂停"
+  }
+
   stage.update(); //更新舞台
 
-
-  doSomething()
-    .then(function () {
-      return doSomethingElse()
-    })
-  .then(finalHandler)
 </script>
 </body>
 </html>
