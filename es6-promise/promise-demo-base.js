@@ -1,8 +1,11 @@
+// 最简单的实例
+
     new Promise(
       //  执行器 executor
       (resolve, reject) => {
         //  一段耗时很长的一步操作
         console.log(111)
+        // if ()
         resolve('hello')  // 数据处理完成
         reject()  // 数据处理出错
       }
