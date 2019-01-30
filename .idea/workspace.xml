@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b8f2254-1e77-4051-a11a-b3c6d6d6d896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/es6-promise/promise-demo03.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es6-promise/promise-demo04-catch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js-test-demo/time_formate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo0.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo00.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo00.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo00.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo01.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo01.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo02.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo02.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo1.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo-test1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo2.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo-base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo03.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo03.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es6-promise/promise-demo04-catch.js" beforeDir="false" afterPath="$PROJECT_DIR$/es6-promise/promise-demo04-catch.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,46 +23,98 @@
     <session id="1127696591">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="1" />
-          <entry key="js" value="7" />
+          <entry key="js" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="7" />
+          <entry key="JavaScript" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="20" />
-          <entry key="js" value="1388" />
+          <entry key="js" value="1609" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="20" />
-          <entry key="JavaScript" value="1388" />
+          <entry key="JavaScript" value="1609" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo04-catch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="340">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js-test-demo/time_formate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo02.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="20" column="8" selection-start-line="20" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo03.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo00.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo01.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -76,10 +128,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/css3/css3-loading.html" />
-        <option value="$PROJECT_DIR$/es6-promise/promise-demo03.js" />
-        <option value="$PROJECT_DIR$/es6-promise/promise-demo02.js" />
         <option value="$PROJECT_DIR$/es6-promise/promise-demo00-base.js" />
+        <option value="$PROJECT_DIR$/es6-promise/promise-demo00.js" />
+        <option value="$PROJECT_DIR$/es6-promise/promise-demo01.js" />
+        <option value="$PROJECT_DIR$/es6-promise/promise-demo02.js" />
+        <option value="$PROJECT_DIR$/es6-promise/promise-demo03.js" />
         <option value="$PROJECT_DIR$/es6-promise/promise-demo04-catch.js" />
+        <option value="$PROJECT_DIR$/js-test-demo/time_formate.js" />
       </list>
     </option>
   </component>
@@ -90,9 +145,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="202" />
     <option name="y" value="23" />
-    <option name="width" value="1361" />
+    <option name="width" value="1680" />
     <option name="height" value="971" />
   </component>
   <component name="ProjectView">
@@ -100,7 +154,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,17 +164,13 @@
             <path>
               <item name="DQ-H5-demos" type="b2602c69:ProjectViewProjectNode" />
               <item name="DQ-H5-demos" type="462c0819:PsiDirectoryNode" />
-              <item name="css3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DQ-H5-demos" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DQ-H5-demos" type="462c0819:PsiDirectoryNode" />
-              <item name="es6-promise" type="462c0819:PsiDirectoryNode" />
+              <item name="js-test-demo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -129,6 +178,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -147,8 +197,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.promise-demo04-catch.js">
-    <configuration name="promise-demo00.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/es6-promise/promise-demo00.js" working-dir="$PROJECT_DIR$/es6-promise">
+  <component name="RunManager" selected="Node.js.time_formate.js">
+    <configuration name="promise-demo01.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="promise-demo01.js" working-dir="$PROJECT_DIR$/es6-promise">
       <method v="2" />
     </configuration>
     <configuration name="promise-demo02.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="promise-demo02.js" working-dir="$PROJECT_DIR$/es6-promise">
@@ -160,18 +210,23 @@
     <configuration name="promise-demo04-catch.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="promise-demo04-catch.js" working-dir="$PROJECT_DIR$/es6-promise">
       <method v="2" />
     </configuration>
+    <configuration name="time_formate.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="time_formate.js" working-dir="$PROJECT_DIR$/js-test-demo">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Node.js.promise-demo02.js" />
       <item itemvalue="Node.js.promise-demo03.js" />
-      <item itemvalue="Node.js.promise-demo00.js" />
       <item itemvalue="Node.js.promise-demo04-catch.js" />
+      <item itemvalue="Node.js.promise-demo01.js" />
+      <item itemvalue="Node.js.time_formate.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.time_formate.js" />
         <item itemvalue="Node.js.promise-demo04-catch.js" />
-        <item itemvalue="Node.js.promise-demo00.js" />
-        <item itemvalue="Node.js.promise-demo02.js" />
         <item itemvalue="Node.js.promise-demo03.js" />
+        <item itemvalue="Node.js.promise-demo02.js" />
+        <item itemvalue="Node.js.promise-demo01.js" />
       </list>
     </recent_temporary>
   </component>
@@ -188,24 +243,28 @@
       <workItem from="1542017528794" duration="1693000" />
       <workItem from="1544179318345" duration="1262000" />
       <workItem from="1544409106793" duration="7935000" />
-      <workItem from="1544601991506" duration="1951000" />
+      <workItem from="1544601991506" duration="5981000" />
+      <workItem from="1545012894395" duration="1397000" />
+      <workItem from="1545276620922" duration="4598000" />
+      <workItem from="1545617632509" duration="554000" />
+      <workItem from="1545964038600" duration="106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12841000" />
+    <option name="totallyTimeSpent" value="23526000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="202" y="23" width="1361" height="971" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="971" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20192887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32992035" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26962456" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993174" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -246,40 +305,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo03.js">
+    <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo04-catch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="340">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo02.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="4" selection-start-line="1" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="400">
+          <caret line="20" column="8" selection-start-line="20" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo01.js">
+    <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo03.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="9" selection-start-line="15" selection-end-line="16" />
+        <state relative-caret-position="680">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo00.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="320">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo04-catch.js">
+    <entry file="file://$PROJECT_DIR$/es6-promise/promise-demo01.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="260">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js-test-demo/time_formate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

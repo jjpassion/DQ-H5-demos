@@ -1,4 +1,4 @@
-// 假如一个Promise .then() 的函数里面不返回新的 Promise，会怎样？
+// 四、假如一个Promise .then() 的函数里面不返回新的 Promise，会怎样？
 console.log('start')
 let p = new Promise(resolve => {
   setTimeout(() => {
@@ -18,7 +18,7 @@ let p = new Promise(resolve => {
       })
     }())
 
-    return false
+    // return false
   })
   .then(value => {
     console.log( value + ' over')

@@ -1,4 +1,4 @@
-// .catch() 捕获错误
+// 七、.catch() 捕获错误
 
 console.log('start')
 new Promise(resolve => {
@@ -12,7 +12,7 @@ new Promise(resolve => {
   })
   .catch( err => {
     console.log('I catch: ' + err)
-    // throw new Error('another error')
+    throw new Error('another error')
   })
   .then(() => {
     console.log('then 2222')

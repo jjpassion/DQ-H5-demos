@@ -1,4 +1,4 @@
-// 分两步、顺序依次执行范例
+// 二、分两步、顺序依次执行范例
 console.log('start')
 new Promise(resolve => {
   setTimeout(() => {
