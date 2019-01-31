@@ -42,9 +42,10 @@
 	app.jsonAll = app.isIOS?9:1;
 
 	// DQ
-	let __urlPrefix = 'https://community.xiaojukeji.com/market/passenger-year-summary/'
+	let __urlPrefix = '//community.xiaojukeji.com/market/passenger-year-summary/'
 	
-	var iosData = ["image/change_0-8308a4cd0e.png", "image/change_1-e8b64bc783.png", "image/change_2-5ab7f9ae5b.png", "image/change_3-6abb1af9e2.png", "image/change_4-ca94ecf42a.png", "image/change_5-3456458cf8.png", "image/end_1-a5947d5741.png", "image/end_2-6d46f4d86e.png", "image/end_3-9f211d1944.png", "image/end_4-8c0035ea9b.png", "image/end_5-47e64efaaf.png", "image/end_6-d4d16fd38a.png", "image/end_7-47e64efaaf.png", "image/end_8-0c66002aba.png", "image/end_9-f82cfb13fe.png", "image/logo-480510eb00.png", "image/next-ddf5648c55.png", "image/run-f177419350.png", "image/shadow-802168682d.png", "image/share_1-3e2df4dabf.png", "image/share_2-b444458ab3.png", "image/share_3-e99ff48842.png", "image/share_4-9f8164b6a4.png", "image/share_5-c14cfbe82d.png", "image/share_6-8e0c76f4a5.png", "image/share_7-c14cfbe82d.png", "image/share_8-5c8d2c163a.png", "image/share_9-229ee93ba0.png", "image/share_logo-c92d38395c.png"];
+	var iosData = ["image/change_0-8308a4cd0e.png", "image/change_1-e8b64bc783.png", "image/change_2-5ab7f9ae5b.png", "image/change_3-6abb1af9e2.png", "image/change_4-ca94ecf42a.png", "image/change_5-3456458cf8.png", "image/end_1-a5947d5741.png", "image/end_2-6d46f4d86e.png", "image/end_3-9f211d1944.png", "image/end_4-8c0035ea9b.png", "image/end_5-47e64efaaf.png", "image/end_6-d4d16fd38a.png", "image/end_7-47e64efaaf.png", "image/end_8-0c66002aba.png", "image/end_9-f82cfb13fe.png", "image/logo-480510eb00.png", "image/next-ddf5648c55.png", 
+	"image/run-f177419350.png", "image/shadow-802168682d.png", "image/share_1-8fbd36ee16.png", "image/share_2-c55cf1412d.png", "image/share_3-170657e2bb.png", "image/share_4-c0437d93c7.png", "image/share_5-cf2abfe62f.png", "image/share_6-8ec073b426.png", "image/share_7-cf2abfe62f.png", "image/share_8-7ed6e69f34.png", "image/share_9-ca61b9633e.png", "image/share_logo-c92d38395c.png"];
 
 	Teemo.self.setData(iosData);
 
@@ -272,24 +273,30 @@
 
 	}
 
-	D.setLoginConfig({
-		loginType:'trinity',
-		role:1
-	});
+	// DQ
+	// D.setLoginConfig({
+	// 	loginType:'trinity',
+	// 	role:1
+	// });
 
 	window.onload = function(){
 
 		setTimeout(function(){
-
-			f.userLogin();
+			// DQ
+			// f.userLogin();
 
 			// app.isLoadData = true;
-			// f.ajax('//api-summary.xiaojukeji.com/passenger/getYearSummaryInfo',app.ticket,app.successCallback,app.errorCallback,true);
+			f.ajax('//api-summary.xiaojukeji.com/passenger/getYearSummaryInfo',app.ticket,app.successCallback,app.errorCallback,true);
+
+			// app.successCallback()
 
 			console.log(dUI)
 
 			f.error();
 			Teemo.load.start();
+			// console.log(app)
+			// 测试数据：
+			app.dataAll = 1
 			f.loading(app,loadingCallback,endingCallback);
 			f.isIOS()&&$(".video")[0].load();
 
@@ -370,12 +377,12 @@
 
 			if(app.now>=3&&app.now<=6){
 
-				$(".hand").attr('src','image/hand_b-92dca22234.png');
-				$(".hand-arrow").attr('src','image/hand_arrow_b-2170dbf884.png');
+				$(".hand").attr('src',__urlPrefix + 'image/hand_b-92dca22234.png');
+				$(".hand-arrow").attr('src',__urlPrefix + 'image/hand_arrow_b-2170dbf884.png');
 
 			}else{
-				$(".hand").attr('src','image/hand-203046b462.png');
-				$(".hand-arrow").attr('src','image/hand_arrow-095edb2c77.png');
+				$(".hand").attr('src',__urlPrefix + 'image/hand-203046b462.png');
+				$(".hand-arrow").attr('src',__urlPrefix + 'image/hand_arrow-095edb2c77.png');
 			}
 
 			if(app.now>2&&app.now<7){
@@ -484,16 +491,16 @@
 	},false);
 
 	$("#play").click(function(){
-
+		console.log('开始')
 		if(!app.isLoadData){
 
-			f.userLogin();
+			// f.userLogin();
 
 		}
-
-		if($(".agree-w").hasClass('hide')||!app.isGetUserInfo){
-			return false;
-		}
+		// DQ debugger  判断用户是否登录，先去掉
+		// if($(".agree-w").hasClass('hide')||!app.isGetUserInfo){
+		// 	return false;
+		// }
 
 		f.initAudio();
 		$("#loading").addClass('fade-out');
@@ -567,7 +574,8 @@
 
 		app.isEnd = true;
 
-		Omega.trackEvent(app.event[9].id,app.event[9].desc);
+		// 数据埋点
+		// Omega.trackEvent(app.event[9].id,app.event[9].desc);
 
 		return false;
 
@@ -642,7 +650,7 @@
 		f.isPassOne = true;
 		$(".hand-arrow, .hand").addClass('hide');
 		nextPage();
-		Omega.trackEvent(app.event[2].id,app.event[2].desc);
+		// Omega.trackEvent(app.event[2].id,app.event[2].desc);
 
 	});
 
