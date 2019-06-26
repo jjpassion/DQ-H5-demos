@@ -7,6 +7,7 @@
 	// DQ url 域名前缀
 	let __urlPrefix = '//community.xiaojukeji.com/market/passenger-year-summary/'
 
+	// isIOS 表示微信中的IOS
 	f.isIOS = function () {
 
 		var u = navigator.userAgent,
@@ -100,21 +101,24 @@
 	}();
 
 	f.loading = function (app, callback1, callback) {
-
+		// callback1 加载中的cbk
+		// callcack 加载结束后的callback
 		app.runRate = 0; // rate 比率，率；速度；价格；等级 
 
 		app.nowRate = 0;
 
 		var timer = setInterval(function () {
 			// app.runRate 0~1 0.99
+			console.log(app.nowRate, app.jsonAll, app.dataAll)
 			if (app.runRate * 100 < (app.nowRate + app.jsonAll + app.dataAll)) {
 				app.runRate += 0.01;
-				console.log(app.nowRate, app.jsonAll, app.dataAll, '22222')
+				
+				// console.log( app.nowRate, app.jsonAll, app.dataAll)
 				callback1(app.runRate);
 				
 			}
-			if (Math.floor(app.runRate * 100) >= 100) {
-
+			else if (Math.floor(app.runRate * 100) >= 100) {
+				console.log('app.nowRate:', 'app.jsonAll: ' , 'app.dataAll: ')
 				clearInterval(timer);
 				callback();
 
@@ -198,7 +202,7 @@
 		if (r == 1 && f.nowInfo == length - 1) {
 			f.isChanging = true;
 			nextCallback();
-			console.log(app.now)
+			// console.log(app.now)
 			Omega.trackEvent(app.event[app.now + 1].id, app.event[app.now + 1].desc);
 			return false;
 		}
@@ -378,7 +382,7 @@
 
 
 	f.ajax = function (url, data, successCallback, errorCallback, isMock) {
-
+		console.log('f.ajax----url: ' + url, 'data: ' + data)
 		if (isMock) {
 			console.log(2222)
 			var mockData = {

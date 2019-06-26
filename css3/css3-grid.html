@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>grid布局</title>
+</head>
+<style>
+.container {
+  /* 默认情况下，容器元素都是块级元素，但也可以设成行内元素 -> display: inline-gride */
+  display: grid; 
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px;
+  /* grid-template-columns: repeat(auto-fill, 33%); */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-row-gap用于设置行间距，grid-column-gap用于设置列间距。 */
+  /* grid-row-gap: 20px; */
+  /* grid-column-gap: 20px; */
+  /* grid-gap属性是grid-column-gap和grid-row-gap的合并简写形式.如果grid-gap省略了第二个值，浏览器认为第二个值等于第一个值。 */
+  /* grid-gap: 20px 20px; */
+  /* 根据最新标准，上面三个属性名的grid-前缀已经删除，grid-column-gap和grid-row-gap写成column-gap和row-gap，grid-gap写成gap。 */
+  /* gap: 20px; */
+  /* grid-template-areas: 'a b c'
+                       'd e f'
+                       'g h i'; */
+  /* 这个顺序由grid-auto-flow属性决定，默认值是row，即"先行后列"。也可以将它设成column，变成"先列后行"。 */
+  grid-auto-flow: column;
+  /* justify-items属性设置单元格内容的水平位置（左中右），align-items属性设置单元格内容的垂直位置（上中下）。 */
+  /* justify-items: start; */
+  /* align-items: stretch; */
+  /* place-items属性是align-items属性和justify-items属性的合并简写形式。如果省略第二个值，则浏览器认为与第一个值相等。 */
+  place-items: start end;
+}
+.container .item {
+  border: 1px dashed lightpink;
+}
+p {
+  text-align: center;
+}
+</style>
+<body>
+  <div class="container">
+    <div class="item"><p>1</p></div>
+    <div class="item"><p>2</p></div>
+    <div class="item"><p>3</p></div>
+    <div class="item"><p>4</p></div>
+    <div class="item"><p>5</p></div>
+    <div class="item"><p>6</p></div>
+    <div class="item"><p>7</p></div>
+    <div class="item"><p>8</p></div>
+    <div class="item"><p>9</p></div>
+    <!-- <div class="item"><p>10</p></div>
+    <div class="item"><p>11</p></div>
+    <div class="item"><p>12</p></div> -->
+  </div>
+</body>
+</html>

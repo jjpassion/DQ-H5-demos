@@ -42,7 +42,9 @@
 
 			// DQ 本地域名测试
 			return '//community.xiaojukeji.com/market/passenger-year-summary/'
-
+			
+			// 以下不执行
+			
 			var _ourl = location.href.split('?')[0].replace('#','');
 			var _url = null;
 

@@ -55,7 +55,7 @@
 
 				_img = new Image();
 				_img.src = _url?(_url.replace('(x)',_order?_sum-_i:_i)):(_iUrl[_i]);
-				// console.log(_iUrl&&_iUrl[_i],i,_sum);
+				console.log(_iUrl&&_iUrl[_i],i,_sum);
 				_img.onload = function(){
 
 					_self.loadSum++;

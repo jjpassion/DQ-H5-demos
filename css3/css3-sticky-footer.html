@@ -1,0 +1,50 @@
+<div id="document">
+  <main>
+    <h1>Everything apart from the footer goes here</h1>
+    <p>Add more text here, to see how the footer responds!</p>
+    <p>Add more text here, to see how the footer responds!</p>
+    <!-- <div class="test" style="height:2000px; background: red;"></div> -->
+  </main>
+  <footer>
+    <h1>The footer goes here</h1>
+  </footer>
+</div>
+<style>
+#document { 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+  flex: auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* Other styling elements, that are not necessary for the example */
+
+* {
+  margin: 0;
+  font-family: Candara;
+}
+
+h1, p {
+  padding: 20px;
+}
+
+footer {
+  color: white;
+  background: url(https://images.unsplash.com/photo-1550795598-717619d32900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer > h1 {
+  text-shadow: 1px 1px 4px #00000080;
+}
+
+</style>
